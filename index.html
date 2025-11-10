@@ -7,6 +7,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     
     <style>
+        /* COLORES CLAVE: 
+        * Bordó/Marrón (Principal): #4E0000 
+        * Oro/Acento: #B08C48 
+        * Fondo: #F8F7F3
+        */
+
         /* Estilos Generales */
         body {
             font-family: 'Roboto', sans-serif;
@@ -24,8 +30,8 @@
         }
         .text-center { text-align: center; }
 
-        /* Tipografía */
-        h1, h2, h3, .stat-value {
+        /* Tipografía - UNIFICADA */
+        h1, h2, h3, .stat-value, .logo {
             font-family: 'Playfair Display', serif;
             color: #4E0000; 
         }
@@ -60,10 +66,8 @@
             align-items: center;
         }
         .logo {
-            font-family: 'Playfair Display', serif;
             font-size: 1.5em;
             font-weight: 700;
-            color: #4E0000;
             text-decoration: none;
         }
         .nav a {
@@ -72,6 +76,7 @@
             margin-left: 25px;
             font-weight: 400;
             transition: color 0.3s;
+            font-family: 'Roboto', sans-serif; /* Usar Roboto para los links de navegación */
         }
         .nav a:hover {
             color: #B08C48; 
@@ -98,7 +103,7 @@
             transition: background-image 0.5s ease;
             position: relative;
         }
-        /* IMÁGENES DEL SLIDER (REEMPLAZAR) */
+        /* IMÁGENES DEL SLIDER (RUTAS LOCALES) */
         .slide:nth-child(1) { background-image: url('img/hotel1.jpeg'); }
         .slide:nth-child(2) { background-image: url('img/hotel2.jpeg'); }
         .slide:nth-child(3) { background-image: url('img/hotel3.jpeg'); }
@@ -109,7 +114,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.45); 
+            background: rgba(0, 0, 0, 0.5); /* Oscurecido ligeramente */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -132,8 +137,8 @@
 
         /* --- 3. BARRA DE ESTADÍSTICAS (Key Metrics) --- */
         #stats {
-            background-color: #B08C48; 
-            color: #4E0000;
+            background-color: #B08C48; /* Oro */
+            color: #4E0000; /* Bordó */
             padding: 30px 0;
         }
         .stats-grid {
@@ -150,14 +155,14 @@
         .stat-value {
             font-size: 2.5em;
             font-weight: 700;
-            color: white; 
+            color: white; /* Números en blanco */
             margin: 0;
         }
         .stat-label {
             font-size: 0.9em;
             font-weight: 700;
             text-transform: uppercase;
-            color: #4E0000;
+            color: #4E0000; /* Texto en bordó */
             margin-top: 5px;
         }
 
@@ -167,7 +172,7 @@
             text-align: center;
         }
         .section:nth-child(odd) {
-            background-color: #EFEBE9; 
+            background-color: #EFEBE9; /* Fondo claro */
         }
 
         /* Grid de Características con Imágenes ARRIBA */
@@ -195,7 +200,7 @@
             background-position: center;
             border-bottom: 5px solid #4E0000;
         }
-        /* IMÁGENES DE LAS CARACTERÍSTICAS (REEMPLAZAR) */
+        /* IMÁGENES DE LAS CARACTERÍSTICAS (RUTAS LOCALES) */
         .img-concepto { background-image: url('img/hotel1.jpeg'); }
         .img-gestion { background-image: url('img/hotel2.jpeg'); }
         .img-servicios { background-image: url('img/hotel3.jpeg'); }
@@ -206,12 +211,12 @@
         .feature-text h3 {
             font-size: 1.4em;
             margin-top: 0;
-            color: #B08C48; 
+            color: #B08C48; /* Título secundario en oro */
         }
 
-        /* --- 5. ALIANZAS ESTRATÉGICAS (Imagen de Fondo) --- */
+        /* --- 5. ALIANZAS ESTRATÉGICAS (Logos) --- */
         #socios {
-            background-color: #4E0000; 
+            background-color: #4E0000; /* Bordó de fondo */
             color: white;
             padding: 80px 0;
         }
@@ -219,14 +224,14 @@
             position: relative;
             margin-top: 50px;
         }
-        /* IMAGEN DE FONDO DE LA SECCIÓN SOCIOS (REEMPLAZAR) */
+        /* IMAGEN DE FONDO (Si deseas una imagen sutil en el fondo) */
         .socios-bg {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://via.placeholder.com/1200x400/222222/FFFFFF?text=FOTO+PANORÁMICA+VIÑEDOS'); 
+            background-image: url('img/vineyard_background.jpg'); /* REEMPLAZAR */
             background-size: cover;
             background-position: center;
             opacity: 0.2; 
@@ -241,39 +246,55 @@
             flex-wrap: wrap;
         }
         .logo-box {
-            width: 220px; 
+            width: 200px; 
             height: 100px;
             margin: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background-color: rgba(255, 255, 255, 0.9); 
-            font-weight: 700;
-            color: #4E0000;
+            background-color: rgba(255, 255, 255, 0.95); 
             border: 2px solid #B08C48;
             box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+            overflow: hidden; /* Para contener las imágenes de logo */
             transition: background-color 0.3s;
         }
         .logo-box:hover {
-            background-color: #B08C48;
-            color: white;
+            background-color: rgba(255, 255, 255, 1);
         }
         .logo-box a {
             text-decoration: none;
             color: inherit;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+        }
+        /* Estilos para los Logos (IMAGEN) */
+        .logo-box img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain; /* Asegura que el logo se ajuste sin distorsionarse */
         }
         
-        /* --- 6. CTA Y BOTONES --- */
+        /* --- 6. VIDEO CTA (Nueva Posición) --- */
+        #video-cta {
+            padding: 60px 0;
+            background-color: #EFEBE9;
+            text-align: center;
+        }
+
+        /* --- 7. CTA FINAL Y BOTONES --- */
         #cta-final {
-            background-color: #4E0000; 
+            background-color: #4E0000; /* Bordó de fondo */
             color: white;
             padding: 60px 0;
             text-align: center;
         }
         .button, .download-button, .video-button {
             display: inline-block;
-            background: #B08C48; 
-            color: #4E0000;
+            background: #B08C48; /* Oro */
+            color: #4E0000; /* Bordó */
             padding: 15px 35px;
             text-decoration: none;
             font-weight: bold;
@@ -282,14 +303,15 @@
             transition: background 0.3s;
             text-transform: uppercase;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            font-family: 'Roboto', sans-serif;
         }
         .button:hover, .download-button:hover, .video-button:hover {
             background: #FFD700;
         }
 
-        /* Estilos del MODAL de Video (Simulación con un div oculto) */
+        /* Estilos del MODAL de Video */
         .video-modal {
-            display: none; /* Inicia oculto */
+            display: none; 
             position: fixed;
             z-index: 2000;
             left: 0;
@@ -304,17 +326,19 @@
         .video-content {
             position: relative;
             margin: auto;
-            padding: 20px;
+            padding: 0; 
             width: 90%;
             max-width: 900px;
-            /* Placeholder para el iframe del video */
             background: #000; 
             height: 500px; 
             display: flex;
             justify-content: center;
             align-items: center;
-            color: white;
-            font-size: 1.5em;
+        }
+        .video-content iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
         }
         /* Icono de cerrar (X) */
         .close-btn {
@@ -326,6 +350,7 @@
             font-weight: bold;
             transition: 0.3s;
             cursor: pointer;
+            z-index: 2001; 
         }
         .close-btn:hover,
         .close-btn:focus {
@@ -341,6 +366,7 @@
             background-color: #333;
             color: #ccc;
             font-size: 0.8em;
+            font-family: 'Roboto', sans-serif;
         }
         
         @media (max-width: 768px) {
@@ -350,6 +376,7 @@
             .stats-grid { flex-direction: column; }
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
+            .nav a { margin-left: 15px; }
         }
     </style>
 
@@ -386,11 +413,7 @@
         <div class="hero-content">
             <p>La Oportunidad Única de Invertir en el Corazón de la Viticultura Argentina</p>
             <h1>WINERY HOTEL & RESTAURANT</h1>
-            <p>**Paraje Altamira, Valle de Uco, Mendoza**</p>
-            
-            <button onclick="openVideoModal()" class="video-button" style="background: #B08C48; color: #4E0000; border: none;">
-                &#x25B6; VER VIDEO PRESENTACIÓN
-            </button>
+            <p><strong>Paraje Altamira, Valle de Uco, Mendoza</strong></p>
             
             <a href="documentos/broshure.pdf" target="_blank" class="download-button" style="background: #4E0000; color: white; border: 2px solid #B08C48;">
                 DESCARGAR BROSHURE COMPLETO
@@ -425,7 +448,7 @@
         <div class="container text-center">
             <h2>Un Activo Inigualable en la Cuna del Malbec</h2>
             <p style="font-size: 1.1em; max-width: 900px; margin: 0 auto 50px;">
-                Impulsado por **Marte** y **Z Inversiones**, en sociedad con **Bodega Finca Abril**, este proyecto responde a la demanda de turismo de alto nivel en una de las Indicaciones Geográficas (IG) más valoradas del mundo: Paraje Altamira.
+                Impulsado por <strong>Marte</strong> y <strong>Z Inversiones</strong>, en sociedad con <strong>Bodega Finca Abril</strong>, este proyecto responde a la demanda de turismo de alto nivel en una de las Indicaciones Geográficas (IG) más valoradas del mundo: Paraje Altamira.
             </p>
             
             <div class="grid-3">
@@ -433,14 +456,14 @@
                     <div class="feature-image img-concepto"></div>
                     <div class="feature-text">
                         <h3>Concepto Boutique de Lujo</h3>
-                        <p>Diseño del **Estudio Marciano - De Micheli**. El hotel contará con 28 *lodges* de alta gama, pensadas para 74 huéspedes por día, buscando la excelencia y el confort.</p>
+                        <p>Diseño del <strong>Estudio Marciano - De Micheli</strong>. El hotel contará con 28 *lodges* de alta gama, pensadas para 74 huéspedes por día, buscando la excelencia y el confort.</p>
                     </div>
                 </div>
                 <div class="feature-box">
                     <div class="feature-image img-gestion"></div>
                     <div class="feature-text">
                         <h3>Gestión de Alto Nivel</h3>
-                        <p>Operación hotelera a cargo de **BENS Hotels**, operador de primer nivel con amplia experiencia en la administración de hoteles independientes de alta gama.</p>
+                        <p>Operación hotelera a cargo de <strong>BENS Hotels</strong>, operador de primer nivel con amplia experiencia en la administración de hoteles independientes de alta gama.</p>
                     </div>
                 </div>
                 <div class="feature-box">
@@ -472,25 +495,43 @@
     <section id="socios">
         <div class="container text-center">
             <h2 style="color: white; border-bottom: 2px solid #B08C48;">Alianza Estratégica</h2>
-            <p style="color: #ccc;">Este proyecto es impulsado por la visión de **Marte** y **Z Inversiones**, y cuenta con el respaldo operativo de **BENS Hotels** y la tradición vitivinícola de **Finca Abril**.</p>
+            <p style="color: #ccc;">Este proyecto es impulsado por la visión de los principales desarrolladores y operadores hoteleros y vitivinícolas de la región.</p>
             
             <div class="socios-grid-wrapper">
                 <div class="socios-bg"></div>
                 <div class="grid-4">
-                    <div class="logo-box"><a href="https://marte.la/" target="_blank">MARTE Desarrollos</a></div>
-                    <div class="logo-box"><a href="https://zinversiones.com/" target="_blank">Z INVERSIONES</a></div>
-                    <div class="logo-box"><a href="https://bens.com.ar/" target="_blank">BENS Hotels (Operador)</a></div>
-                    <div class="logo-box"><a href="https://fincaabril.com/es/" target="_blank">FINCA ABRIL (Bodega)</a></div>
+                    <div class="logo-box">
+                        <a href="https://marte.la/" target="_blank">
+                            <img src="logos/marte_logo.png" alt="Logo Marte Desarrollos"> </a>
+                    </div>
+                    <div class="logo-box">
+                        <a href="https://zinversiones.com/" target="_blank">
+                            <img src="logos/z_inversiones_logo.png" alt="Logo Z Inversiones"> </a>
+                    </div>
+                    <div class="logo-box">
+                        <a href="https://bens.com.ar/" target="_blank">
+                            <img src="logos/bens_hotels_logo.png" alt="Logo BENS Hotels"> </a>
+                    </div>
+                    <div class="logo-box">
+                        <a href="https://fincaabril.com/es/" target="_blank">
+                            <img src="logos/finca_abril_logo.png" alt="Logo Finca Abril"> </a>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
+    
+    <section id="video-cta" class="text-center">
+        <button onclick="openVideoModal()" class="video-button" style="background: #B08C48; color: #4E0000; border: none;">
+            &#x25B6; VER VIDEO PRESENTACIÓN EXCLUSIVA
+        </button>
     </section>
 
     <section id="cta-final">
         <div class="container">
             <h2>Conviértase en Socio Propietario</h2>
             <p style="font-size: 1.2em;">Ingrese al negocio hotelero y vitivinícola más exclusivo de Mendoza con una rentabilidad excepcional y beneficios únicos, incluyendo vinos de alta gama y noches de hotel.</p>
-            <a href="documentos/ESPAÑOL_ P Mendoza hotel - Largo + operador-2.pdf" target="_blank" class="button">SOLICITAR DETALLES DE INVERSIÓN Y RENTABILIDAD</a>
+            <a href="documentos/broshure.pdf" target="_blank" class="button">SOLICITAR DETALLES DE INVERSIÓN Y RENTABILIDAD</a>
         </div>
     </section>
 
@@ -502,7 +543,7 @@
         <span class="close-btn" onclick="closeVideoModal()">&times;</span>
         <div class="video-content">
             <iframe width="560" height="315" src="https://www.youtube.com/embed/2Ssf17od7yI?si=61g5_kTrhGl_qeH9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
+        </div>
     </div>
 
 </body>
