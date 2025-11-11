@@ -123,6 +123,14 @@
             text-align: center;
             padding: 0 20px;
         }
+        
+        /* CORRECCIÓN PARA CENTRAR EL TEXTO EN MÓVILES */
+        #hero .hero-content h1,
+        #hero .hero-content p {
+            width: 100%; /* Asegura que el elemento ocupe todo el ancho para que el text-align funcione */
+        }
+        /* FIN CORRECCIÓN */
+        
         .hero-content p {
             font-size: 1.6em;
             font-weight: 300;
@@ -377,6 +385,11 @@
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
             .nav a { margin-left: 15px; }
+            
+            /* Ajuste específico para el título en móvil */
+            #hero .hero-content h1 {
+                font-size: 2em; /* Reducir el tamaño para pantallas muy pequeñas */
+            }
         }
     </style>
 
@@ -493,7 +506,7 @@
                     loading="lazy" 
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
-                </div>
+            </div>
             <p style="font-size: 0.9em; margin-top: 15px; color: #666;">
                 La ubicación es estratégica sobre la ruta del turismo enológico, siendo paso obligado para visitantes de Bodega Zuccardi y Bodega Alfa Crux.
             </p>
@@ -539,20 +552,4 @@
         <div class="container">
             <h2>Conviértase en Socio Propietario</h2>
             <p style="font-size: 1.2em;">Ingrese al negocio hotelero y vitivinícola más exclusivo de Mendoza con una rentabilidad excepcional y beneficios únicos, incluyendo vinos de alta gama y noches de hotel.</p>
-            <a href="documentos/broshure.pdf" target="_blank" class="button">SOLICITAR DETALLES DE INVERSIÓN Y RENTABILIDAD</a>
-        </div>
-    </section>
-
-    <footer>
-        WINERY HOTEL & RESTAURANT © 2025 | Desarrollado por Marte & Z Inversiones. Contacto: Luciano Corradini +54 9 221 601-1105
-    </footer>
-    
-    <div id="videoModal" class="video-modal">
-        <span class="close-btn" onclick="closeVideoModal()">×</span>
-        <div class="video-content">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/2Ssf17od7yI?si=61g5_kTrhGl_qeH9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-        </div>
-    </div>
-
-</body>
-</html>
+            <a href="documentos/broshure.pdf" target="_blank" class="button">SOLICITAR DETALLES DE INVERSIÓN
