@@ -69,21 +69,21 @@
             font-size: 1.5em;
             font-weight: 700;
             text-decoration: none;
+            white-space: nowrap; /* Asegura que el logo no se rompa si es posible */
         }
         
         /* CORRECCIÓN DE MENÚ DE NAVEGACIÓN */
         .nav {
             display: flex;
-            gap: 20px; /* Usa gap para el espaciado flexible */
+            gap: 20px; 
         }
         .nav a {
             color: #4E0000;
             text-decoration: none;
-            /* margin-left: 25px; <-- ELIMINADO */
             font-weight: 400;
             transition: color 0.3s;
             font-family: 'Roboto', sans-serif; 
-            white-space: nowrap; /* Evita que el texto del enlace se rompa */
+            white-space: nowrap; 
         }
         .nav a:hover {
             color: #B08C48; 
@@ -392,13 +392,18 @@
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
             
-            /* Ajustes para el menú en móviles */
+            /* AJUSTES PARA EL HEADER EN MÓVILES */
+            .logo {
+                font-size: 1.1em; /* Reducido para que quepa en una línea */
+            }
             .nav {
                 gap: 10px; 
             }
             .nav a {
                 font-size: 0.8em;
             }
+            /* FIN AJUSTES HEADER */
+
             /* Ajuste específico para el título en móvil */
             #hero .hero-content h1 {
                 font-size: 2em; 
@@ -565,9 +570,4 @@
         <div class="container">
             <h2>Conviértase en Socio Propietario</h2>
             <p style="font-size: 1.2em;">Ingrese al negocio hotelero y vitivinícola más exclusivo de Mendoza con una rentabilidad excepcional y beneficios únicos, incluyendo vinos de alta gama y noches de hotel.</p>
-            <a href="documentos/broshure.pdf" target="_blank" class="button">SOLICITAR DETALLES DE INVERSIÓN Y RENTABILIDAD</a>
-        </div>
-    </section>
-
-    <footer>
-      
+            <a href="documentos/broshure.pdf" target="_blank" class="button">
