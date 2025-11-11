@@ -136,12 +136,13 @@
             color: white; 
         }
         
-        /* CORRECCIÓN DE SUBTÍTULO DESFASADO */
+        /* CORRECCIÓN FINAL DE SUBTÍTULO DESFASADO */
         .hero-content p {
             font-size: 1.6em;
             font-weight: 300;
             margin-bottom: 30px;
-            display: inline-block; /* Fuerza al p a ajustarse a su contenido para que text-align: center; del padre lo centre */
+            /* text-align: center es la clave para centrar las líneas rotas */
+            text-align: center; 
         }
         
         @keyframes slide-animation {
@@ -392,34 +393,36 @@
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
             
-            /* AJUSTES PARA EL HEADER EN MÓVILES (SOLUCIÓN DEL MENU HORRIBLE) */
+            /* AJUSTES PARA EL HEADER EN MÓVILES (Mantenidos de la corrección anterior) */
             #header {
-                /* Quitamos la altura fija y permitimos que crezca */
                 height: auto;
                 padding-top: 10px;
                 padding-bottom: 10px;
             }
             #header .container {
-                flex-wrap: wrap; /* Permite que el menú baje si no cabe */
-                justify-content: center; /* Centra el logo y el menú cuando se envuelven */
+                flex-wrap: wrap; 
+                justify-content: center; 
             }
             .logo {
                 font-size: 1.1em; 
-                width: 100%; /* El logo ocupa el ancho completo para centrarse mejor */
+                width: 100%; 
                 text-align: center;
             }
             .nav {
-                width: 100%; /* La navegación ocupa todo el ancho */
-                justify-content: center; /* Centra los enlaces dentro del nav */
+                width: 100%; 
+                justify-content: center; 
                 gap: 10px; 
-                margin-top: 10px; /* Separación del logo */
+                margin-top: 10px; 
             }
             .nav a {
                 font-size: 0.8em;
             }
             /* FIN AJUSTES HEADER */
 
-            /* Ajuste específico para el título en móvil */
+            /* AJUSTE PARA EL HERO SECTION EN MÓVILES */
+            .hero-content {
+                padding: 0 10px; /* Reducción de padding lateral para dar más espacio al texto */
+            }
             #hero .hero-content h1 {
                 font-size: 2em; 
             }
@@ -475,10 +478,6 @@
                     <p class="stat-label">Lodges Exclusivos</p>
                 </div>
                 <div class="stat-item">
-                    <p class="stat-value">3 KM</p>
-                    <p class="stat-label">De Bodega Zuccardi</p>
-                </div>
-                <div class="stat-item">
                     <p class="stat-value">IG</p>
                     <p class="stat-label">Paraje Altamira</p>
                 </div>
@@ -502,7 +501,7 @@
                     <div class="feature-image img-concepto"></div>
                     <div class="feature-text">
                         <h3>Concepto Boutique de Lujo</h3>
-                        <p>Diseño del <strong>Estudio Marciano - De Micheli</strong>. El hotel contará con 28 *lodges* de alta gama, pensadas para 74 huéspedes por día, buscando la excelencia y el confort.</p>
+                        <p>Diseño del <strong>Estudio Marciano - De Micheli</strong>. El hotel contará con 28 lodges de alta gama, pensadas para 74 huéspedes por día, buscando la excelencia y el confort.</p>
                     </div>
                 </div>
                 <div class="feature-box">
@@ -568,4 +567,12 @@
                     </div>
                     <div class="logo-box">
                         <a href="https://fincaabril.com/es/" target="_blank">
-                            <img src="img/logo_web_con_texto_chico.png" alt="Logo Finca A
+                            <img src="img/logo_web_con_texto_chico.png" alt="Logo Finca Abril"> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="video-cta" class="text-center">
+        <button oncli
