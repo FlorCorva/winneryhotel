@@ -70,17 +70,25 @@
             font-weight: 700;
             text-decoration: none;
         }
+        
+        /* CORRECCIÓN DE MENÚ DE NAVEGACIÓN */
+        .nav {
+            display: flex;
+            gap: 20px; /* Usa gap para el espaciado flexible */
+        }
         .nav a {
             color: #4E0000;
             text-decoration: none;
-            margin-left: 25px;
+            /* margin-left: 25px; <-- ELIMINADO */
             font-weight: 400;
             transition: color 0.3s;
             font-family: 'Roboto', sans-serif; 
+            white-space: nowrap; /* Evita que el texto del enlace se rompa */
         }
         .nav a:hover {
             color: #B08C48; 
         }
+        /* FIN CORRECCIÓN MENÚ */
 
         /* --- 2. SLIDER / HERO SECTION (CARRUSEL) --- */
         #hero {
@@ -120,14 +128,14 @@
             align-items: center;
             justify-content: center;
             color: white;
-            text-align: center; /* CLAVE para centrar los elementos inline-block */
+            text-align: center; 
             padding: 0 20px;
         }
 
-        /* CORRECCIÓN FINAL PARA CENTRAR EL TÍTULO QUE SE ROMPE */
+        /* CORRECCIÓN DE TÍTULO (Mantenida de la última versión) */
         .hero-content h1 {
-            display: inline-block; /* Hace que el bloque se ajuste al ancho del texto más largo */
-            color: white; /* Asegura el color en la sección hero */
+            display: inline-block; 
+            color: white; 
         }
         
         .hero-content p {
@@ -383,11 +391,17 @@
             .stats-grid { flex-direction: column; }
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
-            .nav a { margin-left: 15px; }
             
+            /* Ajustes para el menú en móviles */
+            .nav {
+                gap: 10px; 
+            }
+            .nav a {
+                font-size: 0.8em;
+            }
             /* Ajuste específico para el título en móvil */
             #hero .hero-content h1 {
-                font-size: 2em; /* Reducir el tamaño para pantallas muy pequeñas */
+                font-size: 2em; 
             }
         }
     </style>
@@ -556,8 +570,4 @@
     </section>
 
     <footer>
-        WINERY HOTEL & RESTAURANT © 2025 | Desarrollado por Marte & Z Inversiones. Contacto: Luciano Corradini +54 9 221 601-1105
-    </footer>
-    
-    <div id="videoModal" class="video-modal">
-        <span class="close-btn" onclick="closeVi
+      
