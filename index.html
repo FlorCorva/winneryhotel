@@ -69,13 +69,12 @@
             font-size: 1.5em;
             font-weight: 700;
             text-decoration: none;
-            white-space: nowrap; /* Asegura que el logo no se rompa si es posible */
+            white-space: nowrap; 
         }
         
-        /* CORRECCIÓN DE MENÚ DE NAVEGACIÓN */
         .nav {
             display: flex;
-            gap: 30px; 
+            gap: 20px; 
         }
         .nav a {
             color: #4E0000;
@@ -88,7 +87,6 @@
         .nav a:hover {
             color: #B08C48; 
         }
-        /* FIN CORRECCIÓN MENÚ */
 
         /* --- 2. SLIDER / HERO SECTION (CARRUSEL) --- */
         #hero {
@@ -132,16 +130,18 @@
             padding: 0 20px;
         }
 
-        /* CORRECCIÓN DE TÍTULO (Mantenida de la última versión) */
+        /* CORRECCIÓN DE TÍTULO PRINCIPAL (Mantenida) */
         .hero-content h1 {
             display: inline-block; 
             color: white; 
         }
         
+        /* CORRECCIÓN DE SUBTÍTULO DESFASADO */
         .hero-content p {
             font-size: 1.6em;
             font-weight: 300;
             margin-bottom: 30px;
+            display: inline-block; /* Fuerza al p a ajustarse a su contenido para que text-align: center; del padre lo centre */
         }
         
         @keyframes slide-animation {
@@ -392,12 +392,27 @@
             .stat-item { padding: 10px; }
             .video-content { height: 300px; }
             
-            /* AJUSTES PARA EL HEADER EN MÓVILES */
+            /* AJUSTES PARA EL HEADER EN MÓVILES (SOLUCIÓN DEL MENU HORRIBLE) */
+            #header {
+                /* Quitamos la altura fija y permitimos que crezca */
+                height: auto;
+                padding-top: 10px;
+                padding-bottom: 10px;
+            }
+            #header .container {
+                flex-wrap: wrap; /* Permite que el menú baje si no cabe */
+                justify-content: center; /* Centra el logo y el menú cuando se envuelven */
+            }
             .logo {
-                font-size: 1.1em; /* Reducido para que quepa en una línea */
+                font-size: 1.1em; 
+                width: 100%; /* El logo ocupa el ancho completo para centrarse mejor */
+                text-align: center;
             }
             .nav {
+                width: 100%; /* La navegación ocupa todo el ancho */
+                justify-content: center; /* Centra los enlaces dentro del nav */
                 gap: 10px; 
+                margin-top: 10px; /* Separación del logo */
             }
             .nav a {
                 font-size: 0.8em;
@@ -553,21 +568,4 @@
                     </div>
                     <div class="logo-box">
                         <a href="https://fincaabril.com/es/" target="_blank">
-                            <img src="img/logo_web_con_texto_chico.png" alt="Logo Finca Abril"> </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <section id="video-cta" class="text-center">
-        <button onclick="openVideoModal()" class="video-button" style="background: #B08C48; color: #4E0000; border: none;">
-            ▶ VER VIDEO PRESENTACIÓN EXCLUSIVA
-        </button>
-    </section>
-
-    <section id="cta-final">
-        <div class="container">
-            <h2>Conviértase en Socio Propietario</h2>
-            <p style="font-size: 1.2em;">Ingrese al negocio hotelero y vitivinícola más exclusivo de Mendoza con una rentabilidad excepcional y beneficios únicos, incluyendo vinos de alta gama y noches de hotel.</p>
-            <a href="documentos/broshure.pdf" target="_blank" class="button">
+                            <img src="img/logo_web_con_texto_chico.png" alt="Logo Finca A
